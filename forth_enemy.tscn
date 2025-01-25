@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://dml0ikfrpve4x" path="res://enemy/6.png" id="2_eyl8l"]
 
 [node name="ForthEnemy" instance=ExtResource("1_tlloi")]
+hp = 1
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(-1.49999, 1.5)
-scale = Vector2(0.0973958, 0.0990741)
+scale = Vector2(0.08, 0.082)
 texture = ExtResource("2_eyl8l")
