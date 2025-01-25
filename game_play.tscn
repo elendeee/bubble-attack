@@ -28,14 +28,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y7sp4")
 
-[node name="Player" parent="." instance=ExtResource("4_3aerj")]
+[node name="Player" parent="." groups=["player"] instance=ExtResource("4_3aerj")]
 position = Vector2(92, 322)
 
 [node name="PlayerSpawnPos" type="Marker2D" parent="."]
-position = Vector2(92, 320)
+position = Vector2(61, 323)
 
-[node name="Bubble" parent="PlayerSpawnPos" instance=ExtResource("4_lbmbo")]
-position = Vector2(-82, 24)
+[node name="Bubble" parent="." instance=ExtResource("4_lbmbo")]
+position = Vector2(18, 448)
+
+[node name="BubbleContainer" type="Node2D" parent="."]
+position = Vector2(0, 29)
 
 [node name="Enemy" parent="." instance=ExtResource("3_dmc3b")]
 position = Vector2(1034, 342)

@@ -1,6 +1,7 @@
 extends Control
 
 @onready var player_spawn_pos = $PlayerSpawnPos
+@onready var bubble_container = $BubbleContainer
 
 var player = null
 
@@ -18,4 +19,5 @@ func _process(_delta):
 		
 func _on_player_bubble_shot(bubble_scene, location):
 		var bubble = bubble_scene.instantiate()
-		bubble.global_positian = location
+		bubble.global_position = location
+		bubble_container.add_child(bubble)

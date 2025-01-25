@@ -4,11 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://do7ia6n7ihf2e" path="res://assets/Bubble.png" id="2_dpnos"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_etxdy"]
-radius = 12.0
-height = 24.0
+radius = 17.0
+height = 38.0
 
 [node name="Bubble" type="Area2D"]
 position = Vector2(87, 2)
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_3g8q4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -22,4 +24,5 @@ shape = SubResource("CapsuleShape2D_etxdy")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-87, -3)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
