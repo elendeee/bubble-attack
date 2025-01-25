@@ -11,16 +11,14 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_kcuoy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-1, 4)
+scale = Vector2(0.110807, 0.116667)
+texture = ExtResource("1_k8wtj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_8dv0q")
-
-[node name="6" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
-scale = Vector2(0.102604, 0.109491)
-texture = ExtResource("1_k8wtj")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(1, -64)
