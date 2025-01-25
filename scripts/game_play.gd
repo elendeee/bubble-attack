@@ -6,11 +6,16 @@ extends Control
 @onready var bubble_container = $BubbleContainer
 @onready var timer = $EnemySpawnTimer
 @onready var enemy_container = $EnemyContainer
+@onready var hud = $UILayer/HUD
 
 var player = null
-var score := 0
+var score := 0:
+	set(value):
+		score = value
+		hud.score = score
 
 func _ready():
+	score = 0
 	player = get_tree().get_first_node_in_group("player")
 	assert(player!=null)
 	player.global_position = player_spawn_pos.global_position

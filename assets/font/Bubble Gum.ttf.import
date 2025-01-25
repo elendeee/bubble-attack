@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://7ox4hrr3uumk"
-path="res://.godot/imported/Bubble Gum.ttf-111ce4914167d0d121402a66a3686663.fontdata"
+path="res://.godot/imported/Bubble Gum.ttf-079bc086a416ee5c386e4a68a69001a1.fontdata"
 
 [deps]
 
-source_file="res://Bubble Gum.ttf"
-dest_files=["res://.godot/imported/Bubble Gum.ttf-111ce4914167d0d121402a66a3686663.fontdata"]
+source_file="res://assets/font/Bubble Gum.ttf"
+dest_files=["res://.godot/imported/Bubble Gum.ttf-079bc086a416ee5c386e4a68a69001a1.fontdata"]
 
 [params]
 
