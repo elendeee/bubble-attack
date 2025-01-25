@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp84oy5as0jh5"]
+[gd_scene load_steps=10 format=3 uid="uid://cp84oy5as0jh5"]
 
 [ext_resource type="Texture2D" uid="uid://bi32adldfpg3x" path="res://BG.png" id="1_457h6"]
 [ext_resource type="Script" path="res://scripts/game_play.gd" id="1_kbmlc"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://boxn16u62wtff" path="res://player.tscn" id="4_3aerj"]
 [ext_resource type="PackedScene" uid="uid://b1e7obm58coao" path="res://bubble.tscn" id="4_lbmbo"]
 [ext_resource type="PackedScene" uid="uid://1qw7r18xrbun" path="res://diver_enemy.tscn" id="6_vkp1u"]
+[ext_resource type="PackedScene" uid="uid://b5da5njhtoefd" path="res://forth_enemy.tscn" id="7_0umpe"]
+[ext_resource type="PackedScene" uid="uid://dd1m8c2h48owy" path="res://third_enemy.tscn" id="7_yg8eg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7sp4"]
 texture = ExtResource("1_457h6")
@@ -45,4 +47,11 @@ position = Vector2(0, 29)
 position = Vector2(1034, 342)
 
 [node name="DiverEnemy" parent="." instance=ExtResource("6_vkp1u")]
-position = Vector2(1064, 129)
+position = Vector2(1202, 152)
+
+[node name="ForthEnemy" parent="DiverEnemy" instance=ExtResource("7_0umpe")]
+position = Vector2(-359, 81)
+
+[node name="ThirdEnemy" parent="." instance=ExtResource("7_yg8eg")]
+position = Vector2(1217, 513)
+speed = 300

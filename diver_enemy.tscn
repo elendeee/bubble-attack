@@ -7,4 +7,13 @@
 speed = 400
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2(-2, 1)
+scale = Vector2(0.0734375, 0.0777778)
 texture = ExtResource("2_uwgiw")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, 1)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(-2, -45)
+scale = Vector2(1.2375, 1.1125)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://btpfo3l164g21"]
 
-[ext_resource type="Texture2D" uid="uid://dml0ikfrpve4x" path="res://enemy/6.png" id="1_k8wtj"]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kcuoy"]
+[ext_resource type="Texture2D" uid="uid://bqgqsfyrrb3p6" path="res://enemy/7.png" id="2_7n3pi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8dv0q"]
-radius = 46.0435
+radius = 30.0167
 
 [node name="Enemy" type="Area2D"]
 collision_layer = 2
@@ -12,17 +12,17 @@ collision_mask = 5
 script = ExtResource("1_kcuoy")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(-1, 4)
-scale = Vector2(0.110807, 0.116667)
-texture = ExtResource("1_k8wtj")
+position = Vector2(-0.500008, 1.5)
+scale = Vector2(0.0598958, 0.0583333)
+texture = ExtResource("2_7n3pi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_8dv0q")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(1, -64)
-scale = Vector2(1.75, 1.55)
+position = Vector2(-3, -44)
+scale = Vector2(1.475, 1.325)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

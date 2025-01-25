@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5da5njhtoefd"]
+
+[ext_resource type="PackedScene" uid="uid://btpfo3l164g21" path="res://enemy.tscn" id="1_tlloi"]
+[ext_resource type="Texture2D" uid="uid://dml0ikfrpve4x" path="res://enemy/6.png" id="2_eyl8l"]
+
+[node name="ForthEnemy" instance=ExtResource("1_tlloi")]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(-1.49999, 1.5)
+scale = Vector2(0.0973958, 0.0990741)
+texture = ExtResource("2_eyl8l")

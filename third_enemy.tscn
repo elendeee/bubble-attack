@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd1m8c2h48owy"]
+
+[ext_resource type="PackedScene" uid="uid://btpfo3l164g21" path="res://enemy.tscn" id="1_p8knw"]
+[ext_resource type="Texture2D" uid="uid://nknopgafmrqc" path="res://enemy/4.png" id="2_n2108"]
+
+[node name="ThirdEnemy" instance=ExtResource("1_p8knw")]
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2(-1.5, -0.5)
+scale = Vector2(0.0619792, 0.0657407)
+texture = ExtResource("2_n2108")
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(-1.1875, -40.1875)
+scale = Vector2(1.01875, 0.98125)

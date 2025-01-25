@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bko32huyomgiy"]
+
+[ext_resource type="PackedScene" uid="uid://b1e7obm58coao" path="res://bubble.tscn" id="1_tmx2t"]
+
+[node name="BubbleScnd" instance=ExtResource("1_tmx2t")]
