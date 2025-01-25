@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody2D
 
 signal bubble_shot(bubble_scene, location)
+signal killed
 
 @export var speed = 300
 @export var rate_of_fire := 0.25
@@ -32,4 +33,5 @@ func shoot():
 	bubble_shot.emit(bubble_scene, muzzle.global_position)
 
 func die():
+	killed.emit()
 	queue_free()
