@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b1sp453scxv5o" path="res://button/Button_17.png" id="4_bbq7r"]
 [ext_resource type="Texture2D" uid="uid://bi7kempd2rgmq" path="res://button/Button_42.png" id="5_l4iug"]
 [ext_resource type="Texture2D" uid="uid://7uatblm8inlb" path="res://button/Button_45.png" id="6_ys26c"]
+[ext_resource type="FontFile" uid="uid://r8jj36khxw0w" path="res://assets/font/Jua-Regular.ttf" id="7_oqe00"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btdyh"]
 texture = ExtResource("2_0ukix")
@@ -30,8 +31,6 @@ texture = ExtResource("6_ys26c")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6tp0"]
 texture = ExtResource("5_l4iug")
-
-[sub_resource type="SystemFont" id="SystemFont_bea22"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -74,14 +73,15 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_m6tp0")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 451.0
+offset_left = 450.0
 offset_top = 570.0
-offset_right = 708.0
+offset_right = 707.0
 offset_bottom = 624.0
 theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
-theme_override_fonts/font = SubResource("SystemFont_bea22")
+theme_override_fonts/font = ExtResource("7_oqe00")
 theme_override_font_sizes/font_size = 35
 text = "Highscore : 100"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_exit_pressed"]
