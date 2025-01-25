@@ -6,6 +6,7 @@
 [node name="DiverEnemy" instance=ExtResource("1_u1cad")]
 speed = 400
 hp = 3
+points = 200
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2(-2, 1)

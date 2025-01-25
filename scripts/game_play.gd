@@ -8,6 +8,7 @@ extends Control
 @onready var enemy_container = $EnemyContainer
 
 var player = null
+var score := 0
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")
@@ -26,8 +27,13 @@ func _on_player_bubble_shot(bubble_scene, location):
 		bubble.global_position = location
 		bubble_container.add_child(bubble)
 
-
 func _on_enemy_spawn_timer_timeout():
 	var e = enemy_scenes.pick_random().instantiate()
 	e.global_position = Vector2(randf_range(1300, 1700), randf_range(90, 600))
+	e.killed.connect(_on_enemy_killed)
 	enemy_container.add_child(e)
+	
+func _on_enemy_killed(points):
+	score += points
+	print(score)
+	
