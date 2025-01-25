@@ -35,6 +35,7 @@ metadata/_edit_vertical_guides_ = [1048.0, 1141.0]
 visible = false
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [node name="Panel" type="Panel" parent="."]
