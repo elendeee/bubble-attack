@@ -1,0 +1,87 @@
+[gd_scene load_steps=16 format=3 uid="uid://dtyeol11un27l"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_ty1h2"]
+[ext_resource type="Texture2D" uid="uid://cr2j6icvbkiq6" path="res://BG+Tittle.png" id="2_0ukix"]
+[ext_resource type="Texture2D" uid="uid://cfnmwcn6bx0r8" path="res://button/Button_15.png" id="3_8udvn"]
+[ext_resource type="Texture2D" uid="uid://b1sp453scxv5o" path="res://button/Button_17.png" id="4_bbq7r"]
+[ext_resource type="Texture2D" uid="uid://bi7kempd2rgmq" path="res://button/Button_42.png" id="5_l4iug"]
+[ext_resource type="Texture2D" uid="uid://7uatblm8inlb" path="res://button/Button_45.png" id="6_ys26c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btdyh"]
+texture = ExtResource("2_0ukix")
+
+[sub_resource type="Theme" id="Theme_jhxn2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmx2e"]
+texture = ExtResource("3_8udvn")
+modulate_color = Color(0.57537, 0.895822, 0.909828, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wb7s0"]
+texture = ExtResource("4_bbq7r")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aq5mx"]
+texture = ExtResource("3_8udvn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_arf0q"]
+texture = ExtResource("5_l4iug")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlxn2"]
+texture = ExtResource("6_ys26c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6tp0"]
+texture = ExtResource("5_l4iug")
+
+[sub_resource type="SystemFont" id="SystemFont_bea22"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ty1h2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_btdyh")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 348.0
+offset_right = 683.0
+offset_bottom = 553.0
+theme = SubResource("Theme_jhxn2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tmx2e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wb7s0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_aq5mx")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 11.0
+offset_right = 110.0
+offset_bottom = 102.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_arf0q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vlxn2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_m6tp0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 570.0
+offset_right = 708.0
+offset_bottom = 624.0
+theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_fonts/font = SubResource("SystemFont_bea22")
+theme_override_font_sizes/font_size = 35
+text = "Highscore : 100"
+
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_exit_pressed"]
