@@ -21,6 +21,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kbmlc")
+enemy_scenes = Array[PackedScene]([ExtResource("3_dmc3b"), ExtResource("6_vkp1u"), ExtResource("7_yg8eg"), ExtResource("7_0umpe")])
+metadata/_edit_horizontal_guides_ = [335.0]
+metadata/_edit_vertical_guides_ = [1048.0, 1141.0]
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+autostart = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -43,15 +49,6 @@ position = Vector2(54, 347)
 [node name="BubbleContainer" type="Node2D" parent="."]
 position = Vector2(0, 29)
 
-[node name="Enemy" parent="." instance=ExtResource("3_dmc3b")]
-position = Vector2(1034, 342)
+[node name="EnemyContainer" type="Node2D" parent="."]
 
-[node name="DiverEnemy" parent="." instance=ExtResource("6_vkp1u")]
-position = Vector2(1202, 152)
-
-[node name="ForthEnemy" parent="DiverEnemy" instance=ExtResource("7_0umpe")]
-position = Vector2(-359, 81)
-
-[node name="ThirdEnemy" parent="." instance=ExtResource("7_yg8eg")]
-position = Vector2(1217, 513)
-speed = 300
+[connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]

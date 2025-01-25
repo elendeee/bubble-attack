@@ -1,7 +1,11 @@
 extends Control
 
+@export var enemy_scenes: Array[PackedScene] = []
+
 @onready var player_spawn_pos = $PlayerSpawnPos
 @onready var bubble_container = $BubbleContainer
+@onready var timer = $EnemySpawnTimer
+@onready var enemy_container = $EnemyContainer
 
 var player = null
 
@@ -21,3 +25,9 @@ func _on_player_bubble_shot(bubble_scene, location):
 		var bubble = bubble_scene.instantiate()
 		bubble.global_position = location
 		bubble_container.add_child(bubble)
+
+
+func _on_enemy_spawn_timer_timeout():
+	var e = enemy_scenes.pick_random().instantiate()
+	e.global_position = Vector2(randf_range(1300, 1700), randf_range(90, 600))
+	enemy_container.add_child(e)
