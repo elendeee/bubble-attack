@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1e7obm58coao"]
+
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_3g8q4"]
+[ext_resource type="Texture2D" uid="uid://do7ia6n7ihf2e" path="res://assets/Bubble.png" id="2_dpnos"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_etxdy"]
+radius = 12.0
+height = 24.0
+
+[node name="Bubble" type="Area2D"]
+position = Vector2(87, 2)
+script = ExtResource("1_3g8q4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.0392253, 0.0384549)
+texture = ExtResource("2_dpnos")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_etxdy")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-87, -3)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
