@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4uwulp8x1lqf"]
+[gd_scene load_steps=16 format=3 uid="uid://c4uwulp8x1lqf"]
 
 [ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_ek3xr"]
 [ext_resource type="FontFile" uid="uid://r8jj36khxw0w" path="res://assets/font/Jua-Regular.ttf" id="1_wwdpe"]
 [ext_resource type="Texture2D" uid="uid://boow4pirct8ew" path="res://button/Button_26.png" id="3_28trv"]
 [ext_resource type="Texture2D" uid="uid://dt03jvdlddti0" path="res://button/Button_29.png" id="4_wbfgq"]
 [ext_resource type="Texture2D" uid="uid://c2hyq6pjs3d3g" path="res://button/Button_92.png" id="5_ykonx"]
+[ext_resource type="Texture2D" uid="uid://b874u3ky3m7qu" path="res://VirusBG.png" id="6_hsc2w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18qpn"]
 bg_color = Color(0, 0.608333, 0.73, 1)
@@ -128,9 +129,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -109.0
+offset_left = -107.0
 offset_top = 61.5
-offset_right = 77.0
+offset_right = 79.0
 offset_bottom = 242.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -142,13 +143,18 @@ icon = ExtResource("5_ykonx")
 
 [node name="BackButton" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 362.0
+offset_left = 369.0
 offset_top = 276.0
-offset_right = 456.0
+offset_right = 463.0
 offset_bottom = 368.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_2octd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ng03o")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5iodw")
+
+[node name="VirusBg" type="Sprite2D" parent="."]
+position = Vector2(575, 313.5)
+scale = Vector2(0.598958, 0.623148)
+texture = ExtResource("6_hsc2w")
 
 [connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]

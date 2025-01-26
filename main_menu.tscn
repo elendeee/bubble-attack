@@ -1,15 +1,20 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtyeol11un27l"]
+[gd_scene load_steps=17 format=3 uid="uid://dtyeol11un27l"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_ty1h2"]
 [ext_resource type="Texture2D" uid="uid://cr2j6icvbkiq6" path="res://BG+Tittle.png" id="2_0ukix"]
 [ext_resource type="Texture2D" uid="uid://cfnmwcn6bx0r8" path="res://button/Button_15.png" id="3_8udvn"]
 [ext_resource type="Texture2D" uid="uid://b1sp453scxv5o" path="res://button/Button_17.png" id="4_bbq7r"]
-[ext_resource type="Texture2D" uid="uid://bi7kempd2rgmq" path="res://button/Button_42.png" id="5_l4iug"]
-[ext_resource type="Texture2D" uid="uid://7uatblm8inlb" path="res://button/Button_45.png" id="6_ys26c"]
+[ext_resource type="Texture2D" uid="uid://m0m17jsewmvf" path="res://button/Button_66.png" id="5_p6mss"]
+[ext_resource type="Texture2D" uid="uid://cobv5asnbhes2" path="res://button/Button_69.png" id="6_roqu6"]
 [ext_resource type="FontFile" uid="uid://r8jj36khxw0w" path="res://assets/font/Jua-Regular.ttf" id="7_oqe00"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btdyh"]
 texture = ExtResource("2_0ukix")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ivgo6"]
+font = ExtResource("7_oqe00")
+font_size = 25
+font_color = Color(0.203922, 0.203922, 0.203922, 1)
 
 [sub_resource type="Theme" id="Theme_jhxn2"]
 
@@ -24,13 +29,13 @@ texture = ExtResource("4_bbq7r")
 texture = ExtResource("3_8udvn")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_arf0q"]
-texture = ExtResource("5_l4iug")
+texture = ExtResource("5_p6mss")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vlxn2"]
-texture = ExtResource("6_ys26c")
+texture = ExtResource("6_roqu6")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m6tp0"]
-texture = ExtResource("5_l4iug")
+texture = ExtResource("5_p6mss")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -49,6 +54,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_btdyh")
+
+[node name="HighScore" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 256.0
+offset_right = 178.0
+offset_bottom = 305.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "created by: silent team"
+label_settings = SubResource("LabelSettings_ivgo6")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -70,18 +93,6 @@ offset_bottom = 102.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_arf0q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_vlxn2")
 theme_override_styles/normal = SubResource("StyleBoxTexture_m6tp0")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 450.0
-offset_top = 570.0
-offset_right = 707.0
-offset_bottom = 624.0
-theme_override_colors/font_color = Color(0.203922, 0.203922, 0.203922, 1)
-theme_override_fonts/font = ExtResource("7_oqe00")
-theme_override_font_sizes/font_size = 35
-text = "Highscore : 100"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_exit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp84oy5as0jh5"]
+[gd_scene load_steps=16 format=3 uid="uid://cp84oy5as0jh5"]
 
 [ext_resource type="Texture2D" uid="uid://bi32adldfpg3x" path="res://BG.png" id="1_457h6"]
 [ext_resource type="Script" path="res://scripts/game_play.gd" id="1_kbmlc"]
@@ -13,9 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://c4uwulp8x1lqf" path="res://game_over_screen.tscn" id="7_kj3rw"]
 [ext_resource type="PackedScene" uid="uid://dd1m8c2h48owy" path="res://third_enemy.tscn" id="7_yg8eg"]
 [ext_resource type="AudioStream" uid="uid://m8ogsoduwi2m" path="res://assets/audio/lose.mp3" id="8_t8nne"]
+[ext_resource type="Texture2D" uid="uid://dshyx7oaehd48" path="res://dirty.png" id="12_hgw8h"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7sp4"]
-texture = ExtResource("1_457h6")
+texture = ExtResource("12_hgw8h")
 modulate_color = Color(0.813258, 0.813258, 0.813258, 1)
 
 [node name="GamePlay" type="Control"]
@@ -73,6 +74,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -3.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_y7sp4")
