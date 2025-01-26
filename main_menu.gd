@@ -20,3 +20,6 @@ func _on_start_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+	
+func set_high_score(value):
+	$Panel/HighScore.text = "High Score: " + str(value)	
