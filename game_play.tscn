@@ -1,15 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://cp84oy5as0jh5"]
+[gd_scene load_steps=15 format=3 uid="uid://cp84oy5as0jh5"]
 
 [ext_resource type="Texture2D" uid="uid://bi32adldfpg3x" path="res://BG.png" id="1_457h6"]
 [ext_resource type="Script" path="res://scripts/game_play.gd" id="1_kbmlc"]
 [ext_resource type="PackedScene" uid="uid://btpfo3l164g21" path="res://enemy.tscn" id="3_dmc3b"]
 [ext_resource type="PackedScene" uid="uid://boxn16u62wtff" path="res://player.tscn" id="4_3aerj"]
 [ext_resource type="PackedScene" uid="uid://b1e7obm58coao" path="res://bubble.tscn" id="4_lbmbo"]
+[ext_resource type="AudioStream" uid="uid://87tdecq25vaq" path="res://assets/audio/pop.ogg" id="6_7wv2e"]
 [ext_resource type="PackedScene" uid="uid://i2li2jjbgnkh" path="res://hud.tscn" id="6_uwlma"]
 [ext_resource type="PackedScene" uid="uid://1qw7r18xrbun" path="res://diver_enemy.tscn" id="6_vkp1u"]
 [ext_resource type="PackedScene" uid="uid://b5da5njhtoefd" path="res://forth_enemy.tscn" id="7_0umpe"]
+[ext_resource type="AudioStream" uid="uid://bcasngnwf0vad" path="res://assets/audio/sparkle.wav" id="7_hnxpy"]
 [ext_resource type="PackedScene" uid="uid://c4uwulp8x1lqf" path="res://game_over_screen.tscn" id="7_kj3rw"]
 [ext_resource type="PackedScene" uid="uid://dd1m8c2h48owy" path="res://third_enemy.tscn" id="7_yg8eg"]
+[ext_resource type="AudioStream" uid="uid://m8ogsoduwi2m" path="res://assets/audio/lose.mp3" id="8_t8nne"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7sp4"]
 texture = ExtResource("1_457h6")
@@ -27,12 +30,39 @@ enemy_scenes = Array[PackedScene]([ExtResource("3_dmc3b"), ExtResource("6_vkp1u"
 metadata/_edit_horizontal_guides_ = [335.0]
 metadata/_edit_vertical_guides_ = [1048.0, 1141.0]
 
+[node name="SFX" type="Node" parent="."]
+
+[node name="BubbleSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_7wv2e")
+
+[node name="PopSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_hnxpy")
+volume_db = -5.591
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_t8nne")
+
 [node name="UILayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UILayer" instance=ExtResource("6_uwlma")]
 
 [node name="GameOverScreen" parent="UILayer" instance=ExtResource("7_kj3rw")]
 visible = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(648, 0)
+
+[node name="Scenery" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(0, -4)
+scale = Vector2(1.0026, 1.00463)
+texture = ExtResource("1_457h6")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 648)
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
